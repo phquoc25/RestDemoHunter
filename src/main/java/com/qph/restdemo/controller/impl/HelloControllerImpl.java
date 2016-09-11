@@ -16,12 +16,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/admin")
 public class HelloControllerImpl implements HelloController{
-    @Autowired
+
     private HelloService helloService;
+    @Autowired
+    public HelloControllerImpl(HelloService helloService) {
+        this.helloService = helloService;
+    }
 
     @Override
     @RequestMapping(value = "/sayhello", method = RequestMethod.GET)
     public String sayHello(@RequestParam String name, @RequestParam String language) throws UnsupportedLanguageException {
         return helloService.sayHello(name, language);
     }
+
+    @RequestMapping(value = "/sayhelloadd", method = RequestMethod.GET)
+    public String sayHelloAdd(@RequestParam String name, @RequestParam String language, @RequestParam String add)
+            throws UnsupportedLanguageException {
+        System.out.println("Additional api " + add);
+        return helloService.sayHello(name, language);
+    }
+
 }
