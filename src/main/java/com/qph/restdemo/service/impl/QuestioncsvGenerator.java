@@ -18,8 +18,8 @@ public abstract class QuestioncsvGenerator implements FileGenerator<QuestionConf
     //Delimiter used in CSV file
     protected static final String DELIMITER = ";";
     protected static final String NEW_LINE_SEPARATOR = "\n";
-    protected static final String MODIFIED_BY = "liquibase";
-    protected static final String MODIFIED_ON = "2016-01-11 07:59:14.822";
+    protected static final String MODIFIED_BY = "tester";
+    protected static final String MODIFIED_ON = "2016-09-11 07:59:14.822";
     //CSV file header
     private final String FILE_HEADER;
     protected ApplicationContext applicationContext;

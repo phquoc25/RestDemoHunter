@@ -37,7 +37,7 @@ public class ExcelFileReaderTest extends ServiceTest{
         Assert.assertNotNull(workbook);
         List<QuestionConfigDTO> rowContent = excelFileReader.process(workbook);
         Assert.assertNotNull(rowContent);
-        Assert.assertEquals(9, rowContent.size());
+        Assert.assertEquals(348, rowContent.size());
         for (int i = 0; i < 9; i++) {
             System.out.println(rowContent.get(i));
         }

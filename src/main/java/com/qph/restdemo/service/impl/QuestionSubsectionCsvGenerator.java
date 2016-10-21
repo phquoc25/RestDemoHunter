@@ -29,7 +29,7 @@ public class QuestionSubsectionCsvGenerator extends QuestioncsvGenerator{
         for (int i = 0; i < rowContents.size(); i++){
             QuestionConfigDTO configDTO = rowContents.get(i);
             //append sort_index
-            fileWriter.append(String.valueOf(i));
+            fileWriter.append(String.valueOf(i+1));
             fileWriter.append(DELIMITER);
             fileWriter.append(configDTO.getQuestionCode());
             fileWriter.append(DELIMITER);

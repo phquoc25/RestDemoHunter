@@ -10,16 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by quocphan on 9/11/2016.
  */
-public class QuestionSubsectionCsvGeneratorTest extends QuestionCsvServiceTest {
-    public static final String INPUT_FILE_NAME = "question.xlsx";
-    public static final String OUTPUT_FILE_NAME = "smst_19_question.csv";
+public class QuestionSectorCsvGeneratorTest extends QuestionCsvServiceTest{
+
     @Autowired
-    private QuestionSubsectionCsvGenerator questionSubsectionCsvGenerator;
+    private QuestionSectorCsvGenerator questionSectorCsvGenerator;
+    public static final String INPUT_FILE_NAME = "question.xlsx";
+    public static final String OUTPUT_FILE_NAME = "smst_19_question_sector.csv";
 
     @Before
     public void setUp() throws Exception {
@@ -35,7 +34,7 @@ public class QuestionSubsectionCsvGeneratorTest extends QuestionCsvServiceTest {
     public void writeContents() throws Exception {
         Workbook workbook = excelFileReader.read(INPUT_FILE_NAME);
         List<QuestionConfigDTO> rowContent = excelFileReader.process(workbook);
-        String generatedFile = questionSubsectionCsvGenerator.generate(rowContent, OUTPUT_FILE_NAME);
+        String generatedFile = questionSectorCsvGenerator.generate(rowContent, OUTPUT_FILE_NAME);
         Assert.assertNotNull(OUTPUT_FILE_NAME, generatedFile);
     }
 

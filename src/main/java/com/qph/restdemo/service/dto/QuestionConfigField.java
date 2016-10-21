@@ -39,7 +39,7 @@ public enum QuestionConfigField {
 		questionTypeMap.put("date", QuestionType.DATE);
 		questionTypeMap.put("single choice", QuestionType.SINGLE_CHOICE);
 		questionTypeMap.put("multi choice", QuestionType.MULTIPLE_CHOICE);
-		questionTypeMap.put("attachment", QuestionType.ATTACHMENT);
+		questionTypeMap.put("upload", QuestionType.ATTACHMENT);
 		questionTypeMap.put("derived", QuestionType.DERIVED);
 	}
 

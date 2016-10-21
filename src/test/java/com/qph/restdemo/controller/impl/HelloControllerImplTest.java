@@ -66,7 +66,7 @@ public class HelloControllerImplTest {
         Assert.assertEquals(expectedResult, actualResult);
     }
 
-    @Test
+   /* @Test
     public void testSayHelloAddAPI() throws Exception {
         String name = "Quoc";
         String language = "en";
@@ -79,5 +79,5 @@ public class HelloControllerImplTest {
                 .andReturn();
         String actualResult = mvcResult.getResponse().getContentAsString();
         Assert.assertEquals(expectedResult, actualResult);
-    }
+    }*/
 }
