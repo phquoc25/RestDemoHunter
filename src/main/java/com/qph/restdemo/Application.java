@@ -11,17 +11,16 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Created by quocphan on 8/14/2016.
  */
-/*@SpringBootApplication*/
-    @Configuration
+@SpringBootApplication
 @EnableAutoConfiguration
 @ComponentScan(basePackages = {"com.qph.restdemo"})
-public class Application/* extends SpringBootServletInitializer*/{
+public class Application extends SpringBootServletInitializer{
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
-    /*@Override
+    @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         return builder.sources(Application.class);
-    }*/
+    }
 }
