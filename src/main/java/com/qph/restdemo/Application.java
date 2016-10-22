@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Created by quocphan on 8/14/2016.
  */
-@SpringBootApplication
+@Configuration
 @EnableAutoConfiguration
 @ComponentScan(basePackages = {"com.qph.restdemo"})
 public class Application extends SpringBootServletInitializer{

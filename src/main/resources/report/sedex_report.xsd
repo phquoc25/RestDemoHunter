@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:element name="Report">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="contentFont" type="xs:string"/>
+                <xs:element name="by" type="xs:string"/>
+                <xs:element name="exportedDate" type="xs:string"/>
+                <xs:element name="siteDetails" type="SiteDetails" />
+                <xs:element name="workerNumbers" type="WorkerNumber" maxOccurs="unbounded"/>
+                <xs:element name="saqResultsList" type="SaqResultsList" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="SiteDetails">
+        <xs:sequence>
+            <xs:element name="company" type="CompanySite" />
+            <xs:element name="site" type="CompanySite" />
+            <xs:element name="address" type="Address" />
+            <xs:element name="lastUpdated" type="xs:string" />
+            <xs:element name="sectorProfiles"  type="xs:string"  maxOccurs="unbounded"/>
+            <xs:element name="completion" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType> 
+    <xs:complexType name="CompanySite">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="code" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType> 
+    <xs:complexType name="Address">
+        <xs:sequence>
+            <xs:element name="addressLine1" type="xs:string" />
+            <xs:element name="addressLine2" type="xs:string" />
+            <xs:element name="city" type="xs:string" />
+            <xs:element name="postCode" type="xs:string" />
+            <xs:element name="countryCode" type="xs:string" />
+            <xs:element name="countryName" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType> 
+    <xs:complexType name="WorkerNumber">
+        <xs:sequence>
+            <xs:element name="workderType" type="xs:string" />
+            <xs:element name="women" type="xs:int" />
+            <xs:element name="men" type="xs:int" />
+            <xs:element name="total" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SaqResult">
+        <xs:sequence>
+            <xs:element name="saqQuestionCode" type="xs:string" />
+            <xs:element name="question" type="xs:string" />
+            <xs:element name="answer" type="xs:string" />
+            <xs:element name="global" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SaqResultsList">
+        <xs:sequence>
+            <xs:element name="headers" type="xs:string" maxOccurs="unbounded"/>
+            <xs:element name="saqResults" type="SaqResult" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
