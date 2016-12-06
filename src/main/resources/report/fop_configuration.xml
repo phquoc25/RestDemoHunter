@@ -61,15 +61,15 @@ the location of this file.
 
             <fonts>
                 <directory recursive="true">.</directory>
-                <auto-detect/>
-                <font embed-url="fonts/SimSun.ttf" kerning="yes" name="SimSun">
+                <!--<auto-detect/>-->
+                <font embed-url="file:///E:/fonts/SimSun.ttf" kerning="yes" name="SimSun">
                     <font-triplet name="SimSun" style="normal" weight="400"/>
                     <font-triplet name="SimSun" style="normal" weight="700"/>
                 </font>
-               <!-- <font embed-url="file:///sazanami-mincho.ttf" kerning="yes" name="Sazanami Mincho">
+                <font embed-url="file:///E:/fonts/sazanami-mincho.ttf" kerning="yes" name="Sazanami Mincho">
                     <font-triplet name="Sazanami Mincho" style="normal" weight="400"/>
                     <font-triplet name="Sazanami Mincho" style="normal" weight="700"/>
-                </font>-->
+                </font>
                 <!-- embedded fonts -->
                 <!--
                 This information must exactly match the font specified

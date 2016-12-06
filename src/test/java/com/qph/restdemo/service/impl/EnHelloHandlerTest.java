@@ -2,6 +2,7 @@ package com.qph.restdemo.service.impl;
 
 import com.qph.restdemo.Application;
 import com.qph.restdemo.service.HelloService;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import static org.apache.batik.svggen.font.table.Table.name;
 import static org.junit.Assert.*;
 
 /**
@@ -46,5 +48,12 @@ public class EnHelloHandlerTest extends ServiceTest {
         Assert.assertEquals("Hello guest", result);
     }
 
+    @Test
+    public void testStringRemoveEnd(){
+        String strTobeRemoved = "Saigon, HCM, HCM, ";
+        String result = StringUtils.removeEnd(strTobeRemoved, ", ");
+        Assert.assertEquals("Saigon, HCM, HCM, ", strTobeRemoved);
+        Assert.assertEquals("Saigon, HCM, HCM", result);
+    }
 
 }

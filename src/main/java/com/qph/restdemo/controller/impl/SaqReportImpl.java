@@ -1,6 +1,7 @@
 package com.qph.restdemo.controller.impl;
 
 import com.google.common.collect.ImmutableMap;
+import com.qph.restdemo.common.InterfaceType;
 import com.qph.restdemo.common.RestErrors;
 import com.qph.restdemo.common.RestException;
 import com.qph.restdemo.controller.SaqReport;
@@ -21,7 +22,7 @@ import java.util.List;
 @RequestMapping("/api/saq")
 public class SaqReportImpl implements SaqReport {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(SaqReportImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(InterfaceType.REPORT_LOG.getInterfaceName());
 
     @Autowired
     private List<SaqReportGenerator> saqReportGenerators;

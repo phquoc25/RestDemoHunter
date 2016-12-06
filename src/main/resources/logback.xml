@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="false">
+    <property name="LOG_LEVEL" value="debug"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>utf-8</charset>
+            <Pattern>%date{ISO8601} [%-5level] %X{principal} %X{sessionId} %logger{10} %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="REPORT_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>Report_PDF.log</file>
+        <append>true</append>
+        <encoder>
+            <charset>utf-8</charset>
+            <Pattern>%date{ISO8601} [%-5level] %X{principal} %X{sessionId} %logger{10} %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.jayway" level="WARN"/>
+    <logger name="ch.qos.logback" level="WARN"/>
+    <logger name="com.codahale.metrics" level="WARN"/>
+    <logger name="com.ryantenney" level="WARN"/>
+    <logger name="net.sf.ehcache" level="WARN"/>
+    <logger name="org.apache" level="WARN"/>
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="org.springframework.web" level="DEBUG"/>
+    <logger name="org.springframework.web.servlet" level="INFO"/>
+    <logger name="org.springframework.security" level="INFO"/>
+    <logger name="org.springframework.cache" level="INFO"/>
+    <logger name="com.fasterxml.jackson.databind" level="INFO"/>
+    <logger name="org.springframework.http" level="DEBUG"/>
+    <logger name="org.hibernate" level="INFO"/>
+    <logger name="org.hibernate.SQL" level="DEBUG"/>
+    <logger name="org.hibernate.type" level="INFO"/>
+
+    <logger name="org.apache" level="WARN">
+        <appender-ref ref="REPORT_LOG"/>
+    </logger>
+    <logger name="report_log" level="DEBUG">
+        <appender-ref ref="REPORT_LOG"/>
+    </logger>
+
+    <root level="${LOG_LEVEL}">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
