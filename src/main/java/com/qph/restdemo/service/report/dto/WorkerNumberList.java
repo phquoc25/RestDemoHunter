@@ -17,17 +17,18 @@ import java.util.List;
 
 
 /**
- * <p>Java class for SaqResultsList complex type.
+ * <p>Java class for WorkerNumberList complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SaqResultsList">
+ * &lt;complexType name="WorkerNumberList">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="headers" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
- *         &lt;element name="saqResults" type="{}SaqResult" maxOccurs="unbounded"/>
+ *         &lt;element name="workerNumbers" type="{}WorkerNumber" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,16 +38,43 @@ import java.util.List;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SaqResultsList", propOrder = {
+@XmlType(name = "WorkerNumberList", propOrder = {
+    "title",
     "headers",
-    "saqResults"
+    "workerNumbers"
 })
-public class SaqResultsList {
+public class WorkerNumberList {
 
+    @XmlElement(required = true)
+    protected String title;
     @XmlElement(required = true)
     protected List<String> headers;
     @XmlElement(required = true)
-    protected List<SaqResult> saqResults;
+    protected List<WorkerNumber> workerNumbers;
+
+    /**
+     * Gets the value of the title property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * Sets the value of the title property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setTitle(String value) {
+        this.title = value;
+    }
 
     /**
      * Gets the value of the headers property.
@@ -78,32 +106,32 @@ public class SaqResultsList {
     }
 
     /**
-     * Gets the value of the saqResults property.
+     * Gets the value of the workerNumbers property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the saqResults property.
+     * This is why there is not a <CODE>set</CODE> method for the workerNumbers property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSaqResults().add(newItem);
+     *    getWorkerNumbers().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link SaqResult }
+     * {@link WorkerNumber }
      * 
      * 
      */
-    public List<SaqResult> getSaqResults() {
-        if (saqResults == null) {
-            saqResults = new ArrayList<SaqResult>();
+    public List<WorkerNumber> getWorkerNumbers() {
+        if (workerNumbers == null) {
+            workerNumbers = new ArrayList<WorkerNumber>();
         }
-        return this.saqResults;
+        return this.workerNumbers;
     }
 
 }

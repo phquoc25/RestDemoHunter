@@ -8,19 +8,24 @@
                 <xs:element name="contentFont" type="xs:string"/>
                 <xs:element name="by" type="xs:string"/>
                 <xs:element name="exportedDate" type="xs:string"/>
+                <xs:element name="saqResultsTitle" type="xs:string"/>
                 <xs:element name="siteDetails" type="SiteDetails" />
-                <xs:element name="workerNumbers" type="WorkerNumber" maxOccurs="unbounded"/>
+                <xs:element name="workerNumberList" type="WorkerNumberList"/>
                 <xs:element name="saqResultsList" type="SaqResultsList" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
     <xs:complexType name="SiteDetails">
         <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="headers" type="xs:string" maxOccurs="unbounded"/>
             <xs:element name="company" type="CompanySite" />
             <xs:element name="site" type="CompanySite" />
             <xs:element name="address" type="Address" />
+            <xs:element name="lastUpdatedLabel" type="xs:string" />
             <xs:element name="lastUpdated" type="xs:string" />
             <xs:element name="sectorProfiles"  type="xs:string"  maxOccurs="unbounded"/>
+            <xs:element name="completionLabel" type="xs:string" />
             <xs:element name="completion" type="xs:string" />
         </xs:sequence>
     </xs:complexType> 
@@ -46,6 +51,13 @@
             <xs:element name="women" type="xs:int" />
             <xs:element name="men" type="xs:int" />
             <xs:element name="total" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="WorkerNumberList">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="headers" type="xs:string" maxOccurs="unbounded"/>
+            <xs:element name="workerNumbers" type="WorkerNumber" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="SaqResult">
